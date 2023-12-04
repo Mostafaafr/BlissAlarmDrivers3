@@ -1,0 +1,263 @@
+[
+    {
+        "id": "69c0606f6fd816a7",
+        "type": "tab",
+        "label": "Prayer Time Thread",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9088802a54f14109",
+        "type": "mqtt out",
+        "z": "69c0606f6fd816a7",
+        "name": "/watch/prayertimes/request",
+        "topic": "watch/prayertimes",
+        "qos": "2",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0f98d85555b05267",
+        "x": 640,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "dd017bbc571e5dfd",
+        "type": "inject",
+        "z": "69c0606f6fd816a7",
+        "name": "Prayer Request",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "getPrayerTimes",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 160,
+        "y": 100,
+        "wires": [
+            [
+                "7c46d5a27bed1642"
+            ]
+        ]
+    },
+    {
+        "id": "9baea78e9912f722",
+        "type": "debug",
+        "z": "69c0606f6fd816a7",
+        "name": "Display Prayer Times",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "c7db3882d3ec238a",
+        "type": "mqtt in",
+        "z": "69c0606f6fd816a7",
+        "name": "/watch/prayertimes/response",
+        "topic": "watch/prayertimes",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "0f98d85555b05267",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 160,
+        "wires": [
+            [
+                "6191f2e93ab0e30d"
+            ]
+        ]
+    },
+    {
+        "id": "4be29a258ea718ec",
+        "type": "ui_text",
+        "z": "69c0606f6fd816a7",
+        "group": "eea7c2eb37b4ee60",
+        "order": 2,
+        "width": "6",
+        "height": "5",
+        "name": "Prayer Times Display",
+        "label": "Prayer Times at Current Location",
+        "format": "<ul>   <li><b>Fajr:</b> {{msg.payload.Fajr}}</li>   <li><b>Dhuhr:</b> {{msg.payload.Dhuhr}}</li>   <li><b>Asr:</b> {{msg.payload.Asr}}</li>   <li><b>Maghrib:</b> {{msg.payload.Maghrib}}</li>   <li><b>Isha:</b> {{msg.payload.Isha}}</li> </ul>",
+        "layout": "col-center",
+        "className": "",
+        "style": true,
+        "font": "Lucida Sans Typewriter,Lucida Console,Monaco,monospace",
+        "fontSize": "18",
+        "color": "#000000",
+        "x": 780,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "7d726a8952907115",
+        "type": "http request",
+        "z": "69c0606f6fd816a7",
+        "name": "GET prayer times",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://api.aladhan.com/v1/timings?latitude={{{payload.lat}}}&longitude={{{payload.lon}}}&method=2",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 370,
+        "y": 220,
+        "wires": [
+            [
+                "3312c6c2a6b01a81"
+            ]
+        ]
+    },
+    {
+        "id": "3312c6c2a6b01a81",
+        "type": "function",
+        "z": "69c0606f6fd816a7",
+        "name": "Get Prayer Times",
+        "func": "// if (msg.payload && msg.payload.data && msg.payload.data.timings) {\n//     const timings = msg.payload.data.timings;\n//     msg.payload = {\n//         Fajr: timings.Fajr,\n//         Dhuhr: timings.Dhuhr,\n//         Asr: timings.Asr,\n//         Maghrib: timings.Maghrib,\n//         Isha: timings.Isha\n//     };\n// } else {\n//     msg.payload = 'Prayer times data not available';\n// }\n// return msg;\n\nfunction convertTo12Hour(timeString) {\n    const [hours, minutes] = timeString.split(':').map(Number);\n    const ampm = hours >= 12 ? 'PM' : 'AM';\n    const hours12 = hours % 12 || 12;\n    return `${hours12}:${minutes < 10 ? '0' + minutes : minutes} ${ampm}`;\n}\n\nif (msg.payload && msg.payload.data && msg.payload.data.timings) {\n    const timings = msg.payload.data.timings;\n    msg.payload = {\n        Fajr: convertTo12Hour(timings.Fajr),\n        Dhuhr: convertTo12Hour(timings.Dhuhr),\n        Asr: convertTo12Hour(timings.Asr),\n        Maghrib: convertTo12Hour(timings.Maghrib),\n        Isha: convertTo12Hour(timings.Isha)\n    };\n} else {\n    msg.payload = 'Prayer times data not available';\n}\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 220,
+        "wires": [
+            [
+                "4be29a258ea718ec",
+                "9baea78e9912f722"
+            ]
+        ]
+    },
+    {
+        "id": "7c46d5a27bed1642",
+        "type": "ui_button",
+        "z": "69c0606f6fd816a7",
+        "name": "Update Weather",
+        "group": "eea7c2eb37b4ee60",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Update Prayer Times",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "green",
+        "className": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 380,
+        "y": 100,
+        "wires": [
+            [
+                "9088802a54f14109"
+            ]
+        ]
+    },
+    {
+        "id": "6191f2e93ab0e30d",
+        "type": "http request",
+        "z": "69c0606f6fd816a7",
+        "name": "GET location",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://ip-api.com/json",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 190,
+        "y": 220,
+        "wires": [
+            [
+                "7d726a8952907115"
+            ]
+        ]
+    },
+    {
+        "id": "0f98d85555b05267",
+        "type": "mqtt-broker",
+        "name": "azureMQTTBroker",
+        "broker": "20.102.106.224",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "eea7c2eb37b4ee60",
+        "type": "ui_group",
+        "name": "Prayer Times",
+        "tab": "300391261a0c1712",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "300391261a0c1712",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]

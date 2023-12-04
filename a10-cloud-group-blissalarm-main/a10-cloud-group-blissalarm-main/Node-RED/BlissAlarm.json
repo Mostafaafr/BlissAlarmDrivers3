@@ -1,0 +1,1148 @@
+[
+    {
+        "id": "fbe7afd9140fd2a8",
+        "type": "tab",
+        "label": "Location thread",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6b856909b988f275",
+        "type": "tab",
+        "label": "Time Thread",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "0ce494acc719caa7",
+        "type": "tab",
+        "label": "Weather Thread",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "69c0606f6fd816a7",
+        "type": "tab",
+        "label": "Prayer Time Thread",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "cf22def42b02f872",
+        "type": "ui-base",
+        "name": "UI",
+        "path": "/dashboard"
+    },
+    {
+        "id": "399742d15c2d1427",
+        "type": "ui-theme",
+        "name": "Interface",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094ce",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        }
+    },
+    {
+        "id": "20b936ba4c418489",
+        "type": "ui-page",
+        "name": "User Web Interface",
+        "ui": "cf22def42b02f872",
+        "path": "/home",
+        "layout": "grid",
+        "theme": "399742d15c2d1427",
+        "order": -1,
+        "className": ""
+    },
+    {
+        "id": "51fa0ae5f674282c",
+        "type": "ui-group",
+        "name": "User Web Interface display",
+        "page": "20b936ba4c418489",
+        "width": "20",
+        "height": "15",
+        "order": -1,
+        "disp": true,
+        "className": ""
+    },
+    {
+        "id": "300391261a0c1712",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e33455eef960fbcc",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "fb67c7837557e0d5",
+        "type": "ui_group",
+        "name": "Time",
+        "tab": "300391261a0c1712",
+        "order": 1,
+        "disp": true,
+        "width": "7",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "40940180ceefd500",
+        "type": "ui_group",
+        "name": "Weather",
+        "tab": "300391261a0c1712",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "eea7c2eb37b4ee60",
+        "type": "ui_group",
+        "name": "Prayer Times",
+        "tab": "300391261a0c1712",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "58b4cb9601c4c4dd",
+        "type": "ui_group",
+        "name": "Location",
+        "tab": "300391261a0c1712",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "a8163472c9c804dc",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "0f98d85555b05267",
+        "type": "mqtt-broker",
+        "name": "azureMQTTBroker",
+        "broker": "20.102.106.224",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "d0f1b7501bb6d367",
+        "type": "mqtt out",
+        "z": "fbe7afd9140fd2a8",
+        "name": "/watch/location/req",
+        "topic": "/watch/location",
+        "qos": "2",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0f98d85555b05267",
+        "x": 650,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "663b18f1c1aa276c",
+        "type": "inject",
+        "z": "fbe7afd9140fd2a8",
+        "name": "Location from PC/Phone",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "location",
+        "payload": "{\"deviceId\":\"blissAlarmPC\",\"location\":{\"latitude\":40.7128,\"longitude\":-74.006},\"timestamp\":\"2023-11-20T12:00:00Z\"}",
+        "payloadType": "json",
+        "x": 190,
+        "y": 120,
+        "wires": [
+            [
+                "6c5baa49e0931bb8"
+            ]
+        ]
+    },
+    {
+        "id": "fe9a4541ba88352d",
+        "type": "debug",
+        "z": "fbe7afd9140fd2a8",
+        "name": "Display location",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "5d7367fc79d2b9c5",
+        "type": "mqtt in",
+        "z": "fbe7afd9140fd2a8",
+        "name": "/watch/location/response",
+        "topic": "/watch/location",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "0f98d85555b05267",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 240,
+        "wires": [
+            [
+                "64b7f2cbf2881356"
+            ]
+        ]
+    },
+    {
+        "id": "64b7f2cbf2881356",
+        "type": "http request",
+        "z": "fbe7afd9140fd2a8",
+        "name": "GET location",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://ip-api.com/json",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 350,
+        "y": 240,
+        "wires": [
+            [
+                "b7025ee2bdafb252"
+            ]
+        ]
+    },
+    {
+        "id": "b7025ee2bdafb252",
+        "type": "function",
+        "z": "fbe7afd9140fd2a8",
+        "name": "Parse Location info",
+        "func": "if (msg.payload && msg.payload.status === \"success\") {\n    const locationInfo = {\n        latitude: msg.payload.lat,\n        longitude: msg.payload.lon,\n        location: `${msg.payload.city}, ${msg.payload.region}, ${msg.payload.country}`\n    };\n    msg.payload = locationInfo;\n} else {\n    msg.payload = \"Location information not available\";\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 240,
+        "wires": [
+            [
+                "d714bea7e3c247fa",
+                "fe9a4541ba88352d"
+            ]
+        ]
+    },
+    {
+        "id": "d714bea7e3c247fa",
+        "type": "ui_text",
+        "z": "fbe7afd9140fd2a8",
+        "group": "58b4cb9601c4c4dd",
+        "order": 2,
+        "width": "6",
+        "height": "3",
+        "name": "Location Display",
+        "label": "Location Info:",
+        "format": "<b>Latitude:</b> {{msg.payload.latitude}}<br> <b>Longitude:</b> {{msg.payload.longitude}}<br> <b>Location:</b> {{msg.payload.location}}",
+        "layout": "col-center",
+        "className": "",
+        "style": true,
+        "font": "Lucida Sans Typewriter,Lucida Console,Monaco,monospace",
+        "fontSize": "18",
+        "color": "#000000",
+        "x": 790,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "1b69ba5a76d37974",
+        "type": "ui_text_input",
+        "z": "fbe7afd9140fd2a8",
+        "name": "IP Input",
+        "label": "Enter IP Address:",
+        "tooltip": "",
+        "group": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "location",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 100,
+        "y": 320,
+        "wires": [
+            [
+                "75f26be733b03ed7"
+            ]
+        ]
+    },
+    {
+        "id": "75f26be733b03ed7",
+        "type": "http request",
+        "z": "fbe7afd9140fd2a8",
+        "name": "GET location",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://ip-api.com/json/{{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 310,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6c5baa49e0931bb8",
+        "type": "ui_button",
+        "z": "fbe7afd9140fd2a8",
+        "name": "",
+        "group": "58b4cb9601c4c4dd",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Update Location",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 430,
+        "y": 120,
+        "wires": [
+            [
+                "d0f1b7501bb6d367"
+            ]
+        ]
+    },
+    {
+        "id": "ceddd26a365abde5",
+        "type": "inject",
+        "z": "6b856909b988f275",
+        "name": "Time Request",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "getTime",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 140,
+        "y": 120,
+        "wires": [
+            [
+                "9381ea0a7e12867a"
+            ]
+        ]
+    },
+    {
+        "id": "01c0c2e01d0ab7bd",
+        "type": "mqtt out",
+        "z": "6b856909b988f275",
+        "name": "/watch/time/request",
+        "topic": "/watch/time",
+        "qos": "2",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0f98d85555b05267",
+        "x": 580,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "46726fbc6fe4b359",
+        "type": "mqtt in",
+        "z": "6b856909b988f275",
+        "name": "/watch/time/response",
+        "topic": "/watch/time",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "0f98d85555b05267",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 220,
+        "wires": [
+            [
+                "533eedabac5e0536"
+            ]
+        ]
+    },
+    {
+        "id": "f35073d5dc83cc3f",
+        "type": "debug",
+        "z": "6b856909b988f275",
+        "name": "Display time",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "e57ca067bbb6f882",
+        "type": "ui_text",
+        "z": "6b856909b988f275",
+        "group": "fb67c7837557e0d5",
+        "order": 0,
+        "width": "7",
+        "height": "4",
+        "name": "Time UI Display",
+        "label": "Date and Time",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": true,
+        "font": "Lucida Sans Typewriter,Lucida Console,Monaco,monospace",
+        "fontSize": "22",
+        "color": "#000000",
+        "x": 800,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "2fb48fc492d25ea6",
+        "type": "function",
+        "z": "6b856909b988f275",
+        "name": "Get Current Time",
+        "func": "// const now = new Date();\n// const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000);\n// const phillyOffset = -5; // -4 if daylight saving time is in effect\n// const phillyTime = new Date(utcTime + (3600000 * phillyOffset));\n\n// let hours = phillyTime.getHours();\n// const minutes = phillyTime.getMinutes();\n// const ampm = hours >= 12 ? 'PM' : 'AM';\n// hours = hours % 12;\n// hours = hours ? hours : 12; // the hour '0' should be '12'\n// const minutesStr = minutes < 10 ? '0' + minutes : minutes;\n\n// msg.payload = `${phillyTime.toISOString().split('T')[0]} ${hours}:${minutesStr} ${ampm}`;\n\n// return msg;\n\n// Assuming msg.latitude, msg.longitude, and msg.timezoneOffset are provided\nconst now = new Date();\nconst utcTime = now.getTime() + (now.getTimezoneOffset() * 60000);\nconst localOffset = msg.timezoneOffset; // Dynamic offset based on current location\nconst localTime = new Date(utcTime + (3600000 * localOffset));\n\nlet hours = localTime.getHours();\nconst minutes = localTime.getMinutes();\nconst ampm = hours >= 12 ? 'PM' : 'AM';\nhours = hours % 12;\nhours = hours ? hours : 12; // the hour '0' should be '12'\nconst minutesStr = minutes < 10 ? '0' + minutes : minutes;\n\nmsg.payload = `${localTime.toISOString().split('T')[0]} ${hours}:${minutesStr} ${ampm}`;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 220,
+        "wires": [
+            [
+                "e57ca067bbb6f882",
+                "f35073d5dc83cc3f"
+            ]
+        ]
+    },
+    {
+        "id": "9381ea0a7e12867a",
+        "type": "ui_button",
+        "z": "6b856909b988f275",
+        "name": "",
+        "group": "fb67c7837557e0d5",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Update Time",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "access_time",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 350,
+        "y": 120,
+        "wires": [
+            [
+                "01c0c2e01d0ab7bd"
+            ]
+        ]
+    },
+    {
+        "id": "fb755dcadc705417",
+        "type": "http request",
+        "z": "6b856909b988f275",
+        "name": "GET timezone",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://api.timezonedb.com/v2.1/get-time-zone?key=C7M79SVVB8AM&format=json&by=position&lat={{{payload.lat}}}&lng={{{payload.lon}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 360,
+        "y": 280,
+        "wires": [
+            [
+                "32bbad2cde97e86b"
+            ]
+        ]
+    },
+    {
+        "id": "533eedabac5e0536",
+        "type": "http request",
+        "z": "6b856909b988f275",
+        "name": "GET location",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://ip-api.com/json",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 190,
+        "y": 280,
+        "wires": [
+            [
+                "fb755dcadc705417"
+            ]
+        ]
+    },
+    {
+        "id": "32bbad2cde97e86b",
+        "type": "function",
+        "z": "6b856909b988f275",
+        "name": "calc offset",
+        "func": "if (msg.payload && msg.payload.status === \"OK\") {\n    const offsetInSeconds = msg.payload.gmtOffset;\n    const offsetInHours = offsetInSeconds / 3600;\n    msg.timezoneOffset = offsetInHours;\n} else {\n    msg.timezoneOffset = 0; // Default to UTC if data not available\n    msg.error = 'Timezone data not available';\n}\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 220,
+        "wires": [
+            [
+                "2fb48fc492d25ea6"
+            ]
+        ]
+    },
+    {
+        "id": "a45bbbf931e4a07f",
+        "type": "mqtt out",
+        "z": "0ce494acc719caa7",
+        "name": "/watch/weather/request",
+        "topic": "/watch/weather",
+        "qos": "2",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0f98d85555b05267",
+        "x": 630,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "17a96af70262cb71",
+        "type": "inject",
+        "z": "0ce494acc719caa7",
+        "name": "Weather Request",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "getWeather",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 160,
+        "y": 120,
+        "wires": [
+            [
+                "c26e885d9d4760c3"
+            ]
+        ]
+    },
+    {
+        "id": "652076b757f2723e",
+        "type": "debug",
+        "z": "0ce494acc719caa7",
+        "name": "Display weather",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "c4da69c9b670f3b6",
+        "type": "mqtt in",
+        "z": "0ce494acc719caa7",
+        "name": "/watch/weather/response",
+        "topic": "/watch/weather",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "0f98d85555b05267",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 240,
+        "wires": [
+            [
+                "4db3b285a98e3e54"
+            ]
+        ]
+    },
+    {
+        "id": "6fcf5997b22b93c7",
+        "type": "ui_gauge",
+        "z": "0ce494acc719caa7",
+        "name": "Temperature Display",
+        "group": "40940180ceefd500",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "°F",
+        "format": "{{msg.payload}}",
+        "min": 0,
+        "max": "125",
+        "colors": [
+            "#000cb3",
+            "#00e604",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 800,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "f49bb68c72ab9810",
+        "type": "http request",
+        "z": "0ce494acc719caa7",
+        "name": "GET Temp Info",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.open-meteo.com/v1/forecast?latitude={{{payload.lat}}}&longitude={{{payload.lon}}}&current_weather=true",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 420,
+        "y": 240,
+        "wires": [
+            [
+                "16f6bf0dac91c857"
+            ]
+        ]
+    },
+    {
+        "id": "16f6bf0dac91c857",
+        "type": "function",
+        "z": "0ce494acc719caa7",
+        "name": "Parse for Temp",
+        "func": "if (msg.payload && msg.payload.current_weather) {\n    const temperatureCelsius = msg.payload.current_weather.temperature;\n    const temperatureFahrenheit = (temperatureCelsius * 9/5) + 32;\n    msg.payload = temperatureFahrenheit.toFixed(0) + '°F'; // Rounded to one decimal place\n} else {\n    msg.payload = 'Temperature data not available';\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 240,
+        "wires": [
+            [
+                "6fcf5997b22b93c7",
+                "652076b757f2723e"
+            ]
+        ]
+    },
+    {
+        "id": "c26e885d9d4760c3",
+        "type": "ui_button",
+        "z": "0ce494acc719caa7",
+        "name": "Update Weather",
+        "group": "40940180ceefd500",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Update Weather",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "green",
+        "className": "",
+        "icon": "cloud",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 380,
+        "y": 120,
+        "wires": [
+            [
+                "a45bbbf931e4a07f"
+            ]
+        ]
+    },
+    {
+        "id": "4db3b285a98e3e54",
+        "type": "http request",
+        "z": "0ce494acc719caa7",
+        "name": "GET location",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://ip-api.com/json",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 290,
+        "y": 300,
+        "wires": [
+            [
+                "f49bb68c72ab9810"
+            ]
+        ]
+    },
+    {
+        "id": "9088802a54f14109",
+        "type": "mqtt out",
+        "z": "69c0606f6fd816a7",
+        "name": "/watch/prayertimes/request",
+        "topic": "watch/prayertimes",
+        "qos": "2",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0f98d85555b05267",
+        "x": 640,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "dd017bbc571e5dfd",
+        "type": "inject",
+        "z": "69c0606f6fd816a7",
+        "name": "Prayer Request",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "getPrayerTimes",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 160,
+        "y": 100,
+        "wires": [
+            [
+                "7c46d5a27bed1642"
+            ]
+        ]
+    },
+    {
+        "id": "9baea78e9912f722",
+        "type": "debug",
+        "z": "69c0606f6fd816a7",
+        "name": "Display Prayer Times",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "c7db3882d3ec238a",
+        "type": "mqtt in",
+        "z": "69c0606f6fd816a7",
+        "name": "/watch/prayertimes/response",
+        "topic": "watch/prayertimes",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "0f98d85555b05267",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 160,
+        "wires": [
+            [
+                "6191f2e93ab0e30d"
+            ]
+        ]
+    },
+    {
+        "id": "4be29a258ea718ec",
+        "type": "ui_text",
+        "z": "69c0606f6fd816a7",
+        "group": "eea7c2eb37b4ee60",
+        "order": 2,
+        "width": "6",
+        "height": "5",
+        "name": "Prayer Times Display",
+        "label": "Prayer Times at Current Location",
+        "format": "<ul>   <li><b>Fajr:</b> {{msg.payload.Fajr}}</li>   <li><b>Dhuhr:</b> {{msg.payload.Dhuhr}}</li>   <li><b>Asr:</b> {{msg.payload.Asr}}</li>   <li><b>Maghrib:</b> {{msg.payload.Maghrib}}</li>   <li><b>Isha:</b> {{msg.payload.Isha}}</li> </ul>",
+        "layout": "col-center",
+        "className": "",
+        "style": true,
+        "font": "Lucida Sans Typewriter,Lucida Console,Monaco,monospace",
+        "fontSize": "18",
+        "color": "#000000",
+        "x": 780,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "7d726a8952907115",
+        "type": "http request",
+        "z": "69c0606f6fd816a7",
+        "name": "GET prayer times",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://api.aladhan.com/v1/timings?latitude={{{payload.lat}}}&longitude={{{payload.lon}}}&method=2",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 370,
+        "y": 220,
+        "wires": [
+            [
+                "3312c6c2a6b01a81"
+            ]
+        ]
+    },
+    {
+        "id": "3312c6c2a6b01a81",
+        "type": "function",
+        "z": "69c0606f6fd816a7",
+        "name": "Get Prayer Times",
+        "func": "// if (msg.payload && msg.payload.data && msg.payload.data.timings) {\n//     const timings = msg.payload.data.timings;\n//     msg.payload = {\n//         Fajr: timings.Fajr,\n//         Dhuhr: timings.Dhuhr,\n//         Asr: timings.Asr,\n//         Maghrib: timings.Maghrib,\n//         Isha: timings.Isha\n//     };\n// } else {\n//     msg.payload = 'Prayer times data not available';\n// }\n// return msg;\n\nfunction convertTo12Hour(timeString) {\n    const [hours, minutes] = timeString.split(':').map(Number);\n    const ampm = hours >= 12 ? 'PM' : 'AM';\n    const hours12 = hours % 12 || 12;\n    return `${hours12}:${minutes < 10 ? '0' + minutes : minutes} ${ampm}`;\n}\n\nif (msg.payload && msg.payload.data && msg.payload.data.timings) {\n    const timings = msg.payload.data.timings;\n    msg.payload = {\n        Fajr: convertTo12Hour(timings.Fajr),\n        Dhuhr: convertTo12Hour(timings.Dhuhr),\n        Asr: convertTo12Hour(timings.Asr),\n        Maghrib: convertTo12Hour(timings.Maghrib),\n        Isha: convertTo12Hour(timings.Isha)\n    };\n} else {\n    msg.payload = 'Prayer times data not available';\n}\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 220,
+        "wires": [
+            [
+                "4be29a258ea718ec",
+                "9baea78e9912f722"
+            ]
+        ]
+    },
+    {
+        "id": "7c46d5a27bed1642",
+        "type": "ui_button",
+        "z": "69c0606f6fd816a7",
+        "name": "Update Weather",
+        "group": "eea7c2eb37b4ee60",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Update Prayer Times",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "green",
+        "className": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 380,
+        "y": 100,
+        "wires": [
+            [
+                "9088802a54f14109"
+            ]
+        ]
+    },
+    {
+        "id": "6191f2e93ab0e30d",
+        "type": "http request",
+        "z": "69c0606f6fd816a7",
+        "name": "GET location",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://ip-api.com/json",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 190,
+        "y": 220,
+        "wires": [
+            [
+                "7d726a8952907115"
+            ]
+        ]
+    }
+]
